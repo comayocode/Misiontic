@@ -2,4 +2,4 @@
 - Notas/Apuntes de las clases
 - Elaboración y explicación de los retos semanales
 
->NOTA: Aún me falta organizar los archivos y clasificarlos en sus respectivas carpetas.
+>NOTA: Falta crear las notas para cada unidad 02, 03, 04 y 05
