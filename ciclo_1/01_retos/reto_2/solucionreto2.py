@@ -5,10 +5,6 @@
     'primer_ingreso':
 } '''
 
-from numpy import conjugate
-from sqlalchemy import intersect
-from sympy import intersection
-
 
 informacion = {
     'id_cliente': 1,
@@ -63,12 +59,12 @@ informacion = {
     'primer_ingreso': False
 }
 
-#SÓLO SE SUBE ESTA FUNCIÓN AL RETO
+''' #SÓLO SE SUBE ESTA FUNCIÓN AL RETO
 def cliente (informacion:dict):
     #RESTO DEL CÓDIGO
     pass
-
-#IMPRIMIR EL DATO QUE RETORNE
-print(cliente(informacion))
+ '''
+''' #IMPRIMIR EL DATO QUE RETORNE
+print(cliente(informacion)) '''
 
 
