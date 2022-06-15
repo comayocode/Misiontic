@@ -7,7 +7,7 @@ rutaFileCsv = 'https://github.com/luisguillermomolero/MisionTIC2022_2/blob/maste
 #Dividir nombre y extensión del archivo
 root, extension = os.path.splitext("movies.csv")
 
-def listaPeliculas(rutaFileCsv: str) -> str:
+def listaPeliculas(rutaFileCsv: str):
     #Validar extensión
     if extension == ".csv":
         try:
