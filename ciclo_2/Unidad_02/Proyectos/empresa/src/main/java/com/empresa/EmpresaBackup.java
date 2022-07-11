@@ -1,9 +1,6 @@
 package com.empresa;
 
-import java.security.PublicKey;
-import java.sql.SQLOutput;
-
-public class Empresa {
+public class EmpresaBackup {
     //ATRIBUTOS
     private String nombre;
     private String telefono;
@@ -13,7 +10,7 @@ public class Empresa {
     private Carro[] carros; //Relación entre Carro y empresa
 
    //CONSTRUTORES
-    public Empresa(String nombre, String telefono, String direccion, String email, String nit){
+    public EmpresaBackup(String nombre, String telefono, String direccion, String email, String nit){
         this.nombre = nombre;
         this.telefono = telefono;
         this.direccion = direccion;
@@ -22,7 +19,7 @@ public class Empresa {
         carros = new Carro[50];
     }
 
-    public Empresa(){
+    public EmpresaBackup(){
         this.nombre = "";
         this.telefono = "";
         this.direccion = "";
@@ -31,7 +28,7 @@ public class Empresa {
         carros = new Carro[50];
     }
 
-    public  Empresa(String nombre, String direccion, String nit){
+    public EmpresaBackup(String nombre, String direccion, String nit){
         this.nombre = nombre;
         this.direccion = direccion;
         this.nit = nit;
