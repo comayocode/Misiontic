@@ -9,7 +9,8 @@ public class Animal {
     private int edad;
     private char genero;
 
-    public Animal(double peso, double tamanio, boolean mamifero, boolean vertebrado, int edad, char genero) {
+    public Animal(String color, double peso, double tamanio, boolean mamifero, boolean vertebrado, int edad, char genero) {
+        this.color = color;
         this.peso = peso;
         this.tamanio = tamanio;
         this.mamifero = mamifero;
