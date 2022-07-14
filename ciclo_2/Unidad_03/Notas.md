@@ -197,3 +197,19 @@ Tendremos que insertar valores a los campos que no reciben valores nulos NOT NUL
 
 <img style="width:550px" src="img/Screenshot_42.png">
 
+## Consultar campos específicos
+
+<img src="img/Screenshot_43.png">
+
+## Consultar campos con alias
+Darle un nombre/alias/apodo a las columnas que nos retorna
+
+<img src="img/Screenshot_44.png">
+
+# Abrir una base de datos desde DBeaver
+
+Nueva conexión bsae de datos > SQLite > open
+
+<img src="img/Screenshot_45.png">
+
+
