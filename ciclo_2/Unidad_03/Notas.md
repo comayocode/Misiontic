@@ -212,4 +212,41 @@ Nueva conexión bsae de datos > SQLite > open
 
 <img src="img/Screenshot_45.png">
 
+## WHERE
+
+Se usa para hacer un filtro de registros
+
+~~~
+SELECT column1, column2
+FROM table_name
+WHERE condicion;
+~~~
+
+<img src="img/Screenshot_46.png">
+
+Selecciona ```last_name, department_id``` de la tabla ```employees``` donde department_id = 10
+
+## OR, AND y NOT
+
+Se combinan con WHERE, estos operadores serían las condiciones
+
+AND y OR se usan para filtrar registros con base a un o más condiciones
+
+- AND: muestra los registros cuando las condiciones separadas por AND son verdaderas
+  ~~~
+  SELECT last_name, department_id FROM employees
+  WHERE department_id = 10 AND department_id = 6;
+  ~~~
+  
+- OR: muestra los registros cuando uno de ellos es verdadero
+  ~~~
+  SELECT last_name, department_id FROM employees 
+  WHERE department_id = 10 OR department_id = 6
+  ~~~
+  
+NOT muestra registros si las condiciones AND y OR no son verdaderas
+~~~
+SELECT * FROM employees
+WHERE NOT department_id = 10;
+~~~
 
