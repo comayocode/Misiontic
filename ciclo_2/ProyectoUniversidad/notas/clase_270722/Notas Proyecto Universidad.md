@@ -179,3 +179,192 @@ public void setNombre(String nombre) {
 ```
 
 ### *Clase Estudiante*
+***Creamos los atributos***:
+
+```java
+private String codigo;
+```
+
+***Aplicando la herencia con clase Persona***
+
+Tomando como referncia al diagrama de clases, la calse `Estudiante` hereda de la clase `Persona`, para aplicar la herencia tenemos que añadir `extends Persona`.
+
+```java
+public class Estudiante extends Persona{
+    // --- ATRIBUTOS ---
+    private String codigo;
+}
+```
+
+***Generando el constructor***
+
+Se pasarían todos los parámetro de la clase "Padre" (Persona) en el constructor y también se incluye el atributo propio de la clase `Estuuiante`
+
+```java
+public class Estudiante extends Persona{
+    // --- ATRIBUTOS ---
+    private String codigo;
+
+    // --- CONSTRUCTOR ---
+    public Estudiante(String nombre, String apellido, int edad, String cedula, char sexo, String codigo) {
+    super(nombre, apellido, edad, cedula, sexo);
+    this.codigo = codigo;
+    }
+}
+```
+
+***Generando consultor del attributo***
+
+```java
+    public String getCodigo() {
+        return codigo;
+    }
+```
+
+### *Clase Facultad*
+
+El proceso es el mismo, se generan los atributos, el/los constructor/es, métodos get(consulto) y set(modificadores).
+
+```java
+public class Facultad {
+    // --- ATRIBUTOS ---
+    private String codigo;
+    private String nombre;
+
+    // --- CONSTRUCTORES ---
+
+    public Facultad(String codigo, String nombre) {
+        this.codigo = codigo;
+        this.nombre = nombre;
+    }
+
+    // --- CONSULTORES ---
+    public String getCodigo() {
+        return codigo;
+    }
+    public String getNombre() {
+        return nombre;
+    }
+
+    // --- MODIFICADORES ---
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+}
+```
+
+### *Clase Unviersidad*
+
+
+***Creamos los atributos***
+
+```java
+public class Universidad {
+    // --- ATRIBUTOS ---
+    private String nombre;
+    private String nit;
+    private String direccion;
+    private ArrayList<String> telefonos;
+    private String email;
+}
+```
+***Creamos el constructor***
+
+No le pasamos como parámetro `telefono` al constructor, ya que `telefono` perteneces a un `ArrayList`
+
+```java
+public class Universidad {
+    // --- ATRIBUTOS ---
+    private String nombre;
+    private String nit;
+    private String direccion;
+    private ArrayList<String> telefonos;
+    private String email;
+  
+public Universidad(String nombre, String nit, String direccion, String email) {
+        this.nombre = nombre;
+        this.nit = nit;
+        this.direccion = direccion;
+        this.email = email;
+        this.telefonos = new ArrayList<String>();
+    }
+}
+```
+
+***Creamos los consultores(get)***
+
+```java
+    // --- CONSULTORES ---
+    public String getNombre() {
+        return nombre;
+    }
+    public String getNit() {
+        return nit;
+    }
+    public String getDireccion() {
+        return direccion;
+    }
+    public ArrayList<String> getTelefonos() {
+        return telefonos;
+    }
+    public String getEmail() {
+        return email;
+    }
+    public ArrayList<Facultad> getFacultades() {
+        return facultades;
+    }
+    public ArrayList<Estudiante> getEstudiantes() {
+        return estudiantes;
+    }
+    public Map<String, ArrayList<String>> getMatriculas() {
+        return matriculas;
+    }
+```
+
+***Creamos los modificadores(set)***
+
+En los modificadores no le pasamos el `nit` ya que es la PK(Primary Key)
+```java
+public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+    public void setTelefonos(ArrayList<String> telefonos) {
+        this.telefonos = telefonos;
+    }
+    public void setEmail(String email) {
+        this.email = email;
+    }
+```
+
+***Creando la relación 1-m entre Universidad y Facultad***
+
+![clipboard.png](9Fo6pMRzX-clipboard.png)
+
+Para crear esa relación usaremos un Arreglo `ArrayList`, esa relación la pasamos como atributo dentro de la clase `Unviersidad`. Para establecer la relación usaremos el ArrayList con con función diamante `ArrayList<>`. También inicializamos la relación en el constructor `this.facultades = new ArrayList<Facultad>();`.
+
+```java
+public class Universidad {
+    private String nombre;
+    private String nit;
+    private String direccion;
+    private ArrayList<String> telefonos;
+    private String email;
+    //RELACION entre Universidad y facultades
+    private ArrayList<Facultad> facultades;
+  
+    public Universidad(String nombre, String nit, String direccion, String email) {
+        this.nombre = nombre;
+        this.nit = nit;
+        this.direccion = direccion;
+        this.email = email;
+        this.telefonos = new ArrayList<String>();
+        //INICIALIZAR la relación
+        this.facultades = new ArrayList<Facultad>();
+}
+```
+
+
+MINUTO 1:47:03
