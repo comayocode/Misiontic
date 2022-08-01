@@ -1,3 +1,7 @@
+import javax.lang.model.element.NestingKind;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
@@ -92,6 +96,37 @@ public class Universidad {
     }
 
     public void matricularEstudiante(String cedula, String codigoFacultad){
-        facultades.contains(codigoFacultad);
+        //Buscar si hay almenos 1 estudiante matriculado en la facultad(Buscamos en el map)
+        if(matriculas.containsKey(codigoFacultad)){
+            //Obtenemos ArrayList y añadir nuevo elemento (CC)
+            matriculas.get(codigoFacultad).add(cedula);
+        }else {
+            ArrayList<String>cedulas = new ArrayList<>();
+            cedulas.add(cedula);
+            //Para añadir elementos se requiere de la llave y valor (key, ArrayList<>)
+            matriculas.put(codigoFacultad, cedulas);
+        }
+    }
+
+    // --- QUERYS O CONSULTAS ---
+
+    //Método para registro de universidad - Retorna TRUE si se registra, FALSE si no se registra
+    public boolean insert(Connection conn){
+        boolean insert = false;
+        try {
+            String consulta = "INSERT INTO universidades VALUES(?,?,?,?)";
+            PreparedStatement ps = conn.prepareStatement(consulta);
+            //Setear
+            ps.setString(1, nit);
+            ps.setString(2, nombre);
+            ps.setString(3, direccion);
+            ps.setString(4, email);
+            //Ejecutar
+            insert = ps.executeUpdate() == 1;
+
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+        return insert;
     }
 }
