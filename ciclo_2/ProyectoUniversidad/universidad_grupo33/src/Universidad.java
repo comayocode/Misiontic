@@ -1,7 +1,5 @@
 import javax.lang.model.element.NestingKind;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
@@ -125,8 +123,59 @@ public class Universidad {
             insert = ps.executeUpdate() == 1;
 
         }catch (SQLException e){
-            e.printStackTrace();
+            //e.printStackTrace();
+            System.out.println(e);
         }
         return insert;
     }
+
+    public static ResultSet getUniversidades(Connection conn){
+        ResultSet rs = null;
+        try {
+            String consulta = "SELECT * FROM universidades";
+            Statement st = conn.createStatement();
+            rs = st.executeQuery(consulta);
+        }catch (SQLException e){
+            System.out.println("ERROR: " + e);
+        }
+        return rs;
+    }
+
+    public static ResultSet getUniversidadByNit(Connection conn, String nit) {
+        ResultSet result = null;
+        try {
+            String query = "SELECT * FROM universidades WHERE nit = ?";
+            PreparedStatement pst = conn.prepareStatement(query);
+            pst.setString(1, nit);
+            result = pst.executeQuery();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return result;
+    }
+
+    public static boolean updateUniversidad(Connection conn, String nit, String nombre, String direccion, String email) {
+        boolean update = false;
+        try {
+            String query = "UPDATE universidades SET nombre = ?, direccion = ?, email = ? WHERE nit = ?";
+            PreparedStatement pst = conn.prepareStatement(query);
+            // Setear la consulta
+            pst.setString(1, nombre);
+            pst.setString(2, direccion);
+            pst.setString(3, email);
+            pst.setString(4, nit);
+            // Ejecutar consulta
+            update = pst.executeUpdate() == 1;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return update;
+    }
+
+
+
+
+
+
+
 }
