@@ -10,6 +10,7 @@ public class ReportesLideres extends javax.swing.JFrame {
     public ReportesLideres() {
         
         initComponents();
+        ConsultasLideres.verDatos();
         
     }
     
@@ -282,7 +283,7 @@ public class ReportesLideres extends javax.swing.JFrame {
     private javax.swing.JPanel jpAtras;
     private javax.swing.JPanel jpBarraSuperior;
     private javax.swing.JPanel jpExit;
-    public javax.swing.JTable jtReportesLideres;
+    public static javax.swing.JTable jtReportesLideres;
     private javax.swing.JLabel lbAtras;
     private javax.swing.JLabel lbExit;
     // End of variables declaration//GEN-END:variables
