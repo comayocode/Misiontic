@@ -40,7 +40,7 @@ public class App {
             info += "\n----------------\n";
         }
         System.out.println(info);
-    }
+    }   
 
     public static void insertJob(Connection connn) throws SQLException{
         String job_title = "Developer";
