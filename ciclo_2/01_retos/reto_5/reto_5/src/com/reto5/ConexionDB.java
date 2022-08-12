@@ -1,6 +1,7 @@
 package com.reto5;
 
-import java.sql.*;
+import java.sql.DriverManager;
+import java.sql.Connection;
 
 public class ConexionDB {
     

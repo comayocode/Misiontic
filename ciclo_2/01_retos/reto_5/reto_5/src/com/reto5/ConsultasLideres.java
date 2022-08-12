@@ -1,13 +1,11 @@
 
 package com.reto5;
 
-import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Connection;
 import java.sql.ResultSetMetaData;
-import java.sql.DriverManager;
 
 public class ConsultasLideres {
     
@@ -21,8 +19,7 @@ public class ConsultasLideres {
             PreparedStatement ps = null;
             ResultSet rs = null;
             ConexionDB con = new ConexionDB(); //Crear objeto conexion
-            Connection conn = con.conectar();
-            
+            Connection conn = con.conectar(); //Llamar la conexión
             
             String consulta = "SELECT ID_Lider, Nombre, Primer_Apellido, Ciudad_Residencia FROM Lider ORDER BY Ciudad_Residencia ASC"; //Consulta primer reporte
             ps = conn.prepareStatement(consulta); //Ejecutar la consulta
@@ -39,21 +36,15 @@ public class ConsultasLideres {
             
             //Recorrer los datos
             while(rs.next()){
-                
                 Object [] filas = new Object[cantidaColumnas];
                 
                 //Pasar los datos al objeto filas
                 for(int i = 0; i<cantidaColumnas; i++){
                     filas[i] = rs.getObject(i + 1);
                 }
-                
                 //Agregar datos al modelo
                 modelo.addRow(filas);
-                
             }
-            
-            
-            
         } catch (Exception e) {
             e.printStackTrace();
         }

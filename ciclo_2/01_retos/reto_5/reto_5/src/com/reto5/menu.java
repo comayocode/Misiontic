@@ -2,12 +2,25 @@
 package com.reto5;
 
 import java.awt.Color;
+import javax.swing.UIManager;
 
 public class menu extends javax.swing.JFrame {
 
     int xMouse, yMouse;
     
     public menu() {
+        
+        /*try{
+            for (UIManager.LookAndFeelInfo info: UIManager.getInstalledLookAndFeels()){
+                if ("Windows".equals(info.getName())){
+                    UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        }catch(Exception e){
+            e.printStackTrace();
+        }*/
+        
         initComponents();
     }
 
@@ -57,9 +70,13 @@ public class menu extends javax.swing.JFrame {
         bg.add(btnProveedores, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 280, 100, 100));
 
         btnLideres.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/imagenes/BTN_95.png"))); // NOI18N
-        btnLideres.setBorderPainted(false);
+        btnLideres.setAlignmentY(0.0F);
+        btnLideres.setBorder(null);
         btnLideres.setContentAreaFilled(false);
         btnLideres.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnLideres.setFocusPainted(false);
+        btnLideres.setFocusTraversalPolicyProvider(true);
+        btnLideres.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnLideres.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/com/imagenes/BTN_90.png"))); // NOI18N
         btnLideres.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/com/imagenes/BTN_100.png"))); // NOI18N
         btnLideres.addActionListener(new java.awt.event.ActionListener() {
@@ -67,7 +84,7 @@ public class menu extends javax.swing.JFrame {
                 btnLideresActionPerformed(evt);
             }
         });
-        bg.add(btnLideres, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 280, 100, 100));
+        bg.add(btnLideres, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 280, 120, 120));
 
         btnProyectos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/imagenes/BTN_95.png"))); // NOI18N
         btnProyectos.setBorderPainted(false);
@@ -217,7 +234,7 @@ public class menu extends javax.swing.JFrame {
     }//GEN-LAST:event_lbExitMouseExited
 
     private void btnLideresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLideresActionPerformed
-        ReportesLideres reli = new ReportesLideres();
+        ReportesLideres2 reli = new ReportesLideres2();
         reli.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnLideresActionPerformed
@@ -229,12 +246,7 @@ public class menu extends javax.swing.JFrame {
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
         try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
+            UIManager.setLookAndFeel("com.sun.java.plaf.windows.WindowsLookAndFeel");
         } catch (ClassNotFoundException ex) {
             java.util.logging.Logger.getLogger(menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {

@@ -1,32 +1,41 @@
-
 package com.reto5;
 
 import java.awt.Color;
+import java.awt.Font;
+import javax.swing.UIManager;
+import javax.swing.table.JTableHeader;
 
 public class ReportesLideres extends javax.swing.JFrame {
-
     int xMouse, yMouse;
-    
+
     public ReportesLideres() {
-        
         initComponents();
         ConsultasLideres.verDatos();
+        //TableHeader();
+        
+        
         
     }
+
+   
     
+    public final void TableHeader() {
+        
+    }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jtReportesLideres = new javax.swing.JTable();
         jpBarraSuperior = new javax.swing.JPanel();
         jpExit = new javax.swing.JPanel();
         lbExit = new javax.swing.JLabel();
         jpAtras = new javax.swing.JPanel();
         lbAtras = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jtReportesLideres = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -35,21 +44,6 @@ public class ReportesLideres extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jtReportesLideres.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {},
-                {},
-                {},
-                {}
-            },
-            new String [] {
-
-            }
-        ));
-        jScrollPane1.setViewportView(jtReportesLideres);
-
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 801, 290));
 
         jpBarraSuperior.setBackground(new java.awt.Color(255, 255, 255));
         jpBarraSuperior.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -182,6 +176,36 @@ public class ReportesLideres extends javax.swing.JFrame {
         jLabel1.setText("Informe de líderes");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 50, 400, -1));
 
+        jtReportesLideres.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {}
+            },
+            new String [] {
+
+            }
+        ));
+        jtReportesLideres.getTableHeader().setReorderingAllowed(false);
+        jScrollPane1.setViewportView(jtReportesLideres);
+
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, 680, 220));
+
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 820, 420));
 
         pack();
@@ -204,7 +228,7 @@ public class ReportesLideres extends javax.swing.JFrame {
     }//GEN-LAST:event_lbAtrasMouseExited
 
     private void jpExitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpExitMouseClicked
-        
+
     }//GEN-LAST:event_jpExitMouseClicked
 
     private void jpExitMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpExitMouseEntered
@@ -252,7 +276,7 @@ public class ReportesLideres extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -269,11 +293,7 @@ public class ReportesLideres extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new ReportesLideres().setVisible(true);
-            }
-        });
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
