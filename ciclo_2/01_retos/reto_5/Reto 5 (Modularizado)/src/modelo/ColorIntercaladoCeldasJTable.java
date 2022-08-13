@@ -64,8 +64,12 @@ public class ColorIntercaladoCeldasJTable extends DefaultTableCellRenderer{
         
         //Si el campo está seleccionado se establece un color para distinguir
         if(isSelected){ 
-            campoTexto.setBackground(new Color(0xD61C4E)); 
-            campoTexto.setForeground(Color.WHITE);
+            campoTexto.setBackground(new Color(0xD61C4E)); //ORIGINAL ROSA
+            //campoTexto.setBackground(new Color(0x3B1347)); //MORADO OSCURO
+            
+            //PROBANDO COLORES
+            //campoTexto.setBackground(new Color(0x1E89CC));
+            //campoTexto.setForeground(Color.WHITE);
         }
         
         //Cambiar Fontsize las filas

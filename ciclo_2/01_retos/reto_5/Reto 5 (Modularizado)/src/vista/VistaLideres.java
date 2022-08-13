@@ -163,7 +163,7 @@ public class VistaLideres extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(59, 19, 71));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Informe de líderes");
-        bg.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 60, 400, -1));
+        bg.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 300, -1));
 
         jtReportesLideres.setFont(new java.awt.Font("Roboto", 0, 8)); // NOI18N
         jtReportesLideres.setModel(new javax.swing.table.DefaultTableModel(
@@ -183,15 +183,25 @@ public class VistaLideres extends javax.swing.JFrame {
 
         bg.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 600, 280));
 
-        btnGenerarPDF.setBackground(new java.awt.Color(255, 0, 0));
-        btnGenerarPDF.setText(" PDF");
-        btnGenerarPDF.setOpaque(true);
+        btnGenerarPDF.setBackground(new java.awt.Color(255, 255, 255));
+        btnGenerarPDF.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/BTN_GUARDAR_REPORTE 40x40.png"))); // NOI18N
+        btnGenerarPDF.setBorder(null);
+        btnGenerarPDF.setBorderPainted(false);
+        btnGenerarPDF.setContentAreaFilled(false);
+        btnGenerarPDF.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnGenerarPDF.setFocusPainted(false);
+        btnGenerarPDF.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/img/BTN_GUARDAR_REPORTE 42x42 3.png"))); // NOI18N
+        btnGenerarPDF.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnGenerarPDFMouseEntered(evt);
+            }
+        });
         btnGenerarPDF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGenerarPDFActionPerformed(evt);
             }
         });
-        bg.add(btnGenerarPDF, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 440, -1, -1));
+        bg.add(btnGenerarPDF, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 60, 50, 50));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -201,7 +211,7 @@ public class VistaLideres extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bg, javax.swing.GroupLayout.PREFERRED_SIZE, 488, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(bg, javax.swing.GroupLayout.PREFERRED_SIZE, 427, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -276,6 +286,10 @@ public class VistaLideres extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_btnGenerarPDFActionPerformed
+
+    private void btnGenerarPDFMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnGenerarPDFMouseEntered
+        btnGenerarPDF.setToolTipText("Guardar Reporte");
+    }//GEN-LAST:event_btnGenerarPDFMouseEntered
     
     //Método para editar el Header del jtable
     private void editarHeaderJtable(){
@@ -283,6 +297,11 @@ public class VistaLideres extends javax.swing.JFrame {
         header.setFont(new Font("Roboto", Font.BOLD, 16));
         header.setOpaque(false);
         jtReportesLideres.getTableHeader().setBackground(new Color(0x1E89CC));
+        
+        //PROBANDO COLORES
+        //jtReportesLideres.getTableHeader().setBackground(new Color(0x3B1347));
+        //jtReportesLideres.getTableHeader().setForeground(new Color(0xEAD5FF));
+        
         
         //Centrar encabezado del Header
         //((DefaultTableCellRenderer) jtReportesLideres.getTableHeader().getDefaultRenderer()).setHorizontalAlignment(SwingConstants.CENTER);
