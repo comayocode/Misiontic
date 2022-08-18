@@ -1,3 +1,2 @@
 # Misiontic
-- Notas/Apuntes de las clases
-- Elaboración y explicación de los retos semanales
+Notas, material y desarrollo de los retos
